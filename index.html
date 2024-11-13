@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Televisor Retro con Múltiples Videos</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">   
+</head>
+<body>
+    <div class="access-screen" id="access-screen">
+        <h2> Accede a Emtropy</h2>
+        <input type="password" id="access-code" class="access-input" placeholder="Clave de acceso">
+        <button onclick="checkAccess()" class="access-button">Acceder</button>
+    </div>
+    
+    <!-- Televisor retro (inicialmente oculto) -->
+    <div class="tv-container" id="tv-container">
+        <!-- Nombre del televisor -->
+        <div class="tv-name">JVC</div>
+        
+        <!-- Pantalla del TV -->
+        <div class="tv-screen">
+            <iframe id="tv-video" src="https://www.youtube.com/embed/ROkOUS-7u2M" allowfullscreen></iframe>
+        </div>
+        <div class="tv-controls">
+            <div class="tv-button" onclick="changeVideo(1)">1</div>
+            <div class="tv-button" onclick="changeVideo(2)">2</div>
+            <div class="tv-button" onclick="changeVideo(3)">3</div>
+            <div class="tv-button" onclick="changeVideo(4)">4</div>
+            <div class="tv-button" onclick="changeVideo(5)">5</div>
+        </div>
+        <div class="tv-container" id="tv-container">
+            <!-- Contenedor del televisor -->
+            <div class="tv-screen">
+                <!-- Aquí se va a cargar el iframe del video -->
+                <iframe id="video-frame" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        
+            <div class="tv-controls">
+                <!-- Botón para iniciar el primer video -->
+                <button class="tv-button" id="start-button">Iniciar Video</button>
+                <!-- Botón para cambiar al siguiente video manualmente -->
+                <button class="tv-button" onclick="playNextVideo()">Siguiente Video</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+<!-- Tu contenido aquí -->

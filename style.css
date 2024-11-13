@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+/* Estilo común para todos los textos */
+body, h2, .access-input, .access-button, div {
+    font-family: 'Press Start 2P', cursive; /* Fuente retro */
+    font-size: 1.5rem; /* Tamaño de fuente para texto general */
+    color: #fff; /* Color blanco */
+    text-transform: uppercase; /* Mayúsculas */
+    letter-spacing: 1px; /* Espaciado entre letras */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra de texto */
+    margin: 0;
+    padding: 12px;
+}
+
+/* Estilo para el contenedor de la pantalla de acceso */
+.access-screen {
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro con transparencia */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
+}
+
+/* Estilo para el campo de entrada de contraseña */
+.access-input {
+    padding: 12px;
+    font-size: 1rem;
+    width: 250px;
+    margin: auto; /* Añade espacio entre el campo de entrada y el botón */
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+}
+
+/* Estilo para el botón de acceso */
+.access-button {
+    padding: 12px 25px;
+    background-color: #337aff; /* Color de fondo del botón */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-transform: uppercase; /* Mayúsculas */
+    margin-top: 15px; /* Espacio adicional entre el input y el botón */
+}
+
+/* Efecto cuando el mouse pasa sobre el botón */
+.access-button:hover {
+    background-color: #47ffa3;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.8);
+    transform: translateY(5px);
+}
+
+/* Efecto cuando el botón es presionado */
+.access-button:active {
+    background-color: #47ffa3;
+    transform: scale(0.98); /* Efecto de presión */
+}
+
+
+/* Estilo para los divs, como el "tv" */
+div {
+    font-family: 'Press Start 2P', cursive; /* Fuente retro */
+    text-align: center;
+    font-size: 1.5rem; /* Ajustamos el tamaño de fuente */
+    color: #fff; /* Blanco para el texto */
+    text-transform: uppercase; /* Mayúsculas */
+    letter-spacing: 1px; /* Espaciado entre letras */
+}
+
+/* Estilo del contenedor de la pantalla de acceso */
+.access-screen {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+    text-align: center;
+}
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #222; /* Fondo oscuro para un toque underground */
+    background-image: url(img/cafecito.jpg); /* URL de tu imagen */
+    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+    background-position: center;
+    margin: 0;
+    color: #fff; /* Texto en blanco para contrastar con el fondo oscuro */
+}
+
+/* Estilos generales para el cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #222; /* Fondo oscuro */
+    background-image: url('img/cafecito.jpg');
+    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+    background-position: center center;
+    background-attachment: fixed;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* Estilos generales para el contenedor */
+.container {
+    z-index: 1;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    text-align: center;
+}
+
+/* Estilo para los botones de acceso */
+.access-button {
+    padding: 12px 25px;
+    background-color: #337aff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.access-button:hover {
+    background-color: #47ffa3;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.8);
+    transform: translateY(5px);
+}
+
+/* Estilo para el televisor retro */
+.tv-container {
+    display: flex;
+    text-align: center;
+    width: 700px;
+    background-color: #333;
+    padding: 80px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    border: 12px solid #555;
+    position: relative;
+    margin-top: 30px;
+}
+
+/* Estilo general para el contenedor del televisor */
+.tv-container {
+    display: none;
+    text-align: center;
+    width: 700px;
+    background-color: #333;
+    padding: 55px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    border: 12px solid #555;
+    position: relative;
+    margin-top: 30px;
+}
+
+/* Nombre del televisor */
+.tv-name {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 255, 255, 0.6);
+    letter-spacing: 3px;
+}
+
+.tv-container::before {
+    left: 30%;
+    transform: rotate(-25deg);
+}
+
+.tv-container::after {
+    right: 30%;
+    transform: rotate(25deg);
+}
+
+/* Pantalla del televisor */
+.tv-screen {
+    background-color: #222;
+    padding: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+/* Iframe para video en el televisor */
+.tv-screen iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+/* Controles del televisor */
+.tv-controls {
+    margin-top: 20px;
+}
+
+/* Estilo de los botones de control */
+.tv-button {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 25px;
+    background-color: #444;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.tv-button:hover {
+    background-color: #555;
+    transform: scale(1.1);
+}
+
+.tv-button:active {
+    background-color: #666;
+    transform: scale(1.05);
+}
+
+/* MEDIA QUERIES */
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .tv-container {
+        width: 90%; /* El televisor ocupa el 90% del ancho de la pantalla */
+        padding: 10px; /* Reducimos el padding para pantallas pequeñas */
+    }
+
+    .tv-name {
+        font-size: 1.5rem; /* Reducimos el tamaño del nombre */
+    }
+
+    .tv-button {
+        font-size: 1rem; /* Reducimos el tamaño de los botones */
+        padding: 10px 20px;
+    }
+
+    .access-input {
+        width: 80%; /* Hacemos el campo de texto más pequeño */
+    }
+
+    .access-button {
+        width: 80%; /* Hacemos el botón más pequeño */
+        padding: 12px;
+        font-size: 1.1rem;
+    }
+
+    .tv-screen iframe {
+        height: 300px; /* Reducimos el tamaño del video */
+    }
+}
+
+/* Pantallas muy pequeñas (teléfonos pequeños) */
+@media (max-width: 480px) {
+    .tv-container {
+        width: 90%;
+        padding: 5px; /* Reducimos aún más el padding */
+    }
+
+    .tv-name {
+        font-size: 1.2rem; /* Ajuste para pantallas muy pequeñas */
+    }
+
+    .tv-button {
+        font-size: 0.9rem; /* Aún más pequeño para pantallas muy pequeñas */
+        padding: 8px 18px;
+    }
+
+    .tv-screen iframe {
+        height: 250px; /* Reducimos aún más el tamaño del iframe */
+    }
+}
+
