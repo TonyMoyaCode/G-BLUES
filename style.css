@@ -166,8 +166,6 @@ body {
     position: relative;
     margin-top: 30px;
 }
-
-/* Estilo general para el contenedor del televisor */
 /* Estilo general para el contenedor del televisor */
 .tv-container {
     display: none; /* Ocultamos el contenedor inicialmente */
@@ -195,7 +193,6 @@ body {
     transform: translateX(-50%);
 }
 
-
 .tv-antenna::before,
 .tv-antenna::after {
     content: "";
@@ -220,22 +217,24 @@ body {
 
 /* Nombre del televisor */
 .tv-name {
-    position: absolute;
-    top: 10px;
+    top: 50px; /* Fijamos el nombre un poco debajo del borde superior */
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); /* Asegura que esté centrado horizontalmente */
     font-size: 2rem;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     color: #fff;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 255, 255, 0.6);
     letter-spacing: 3px;
+    padding: 35px;
+    z-index: 999; /* Asegura que se vea encima de otros elementos */
 }
+
 
 /* Pantalla del televisor */
 .tv-screen {
     background-color: #914848;
-    padding: 5vw;  /* Ajustamos el padding de la pantalla */
+    padding: 1vw;  /* Ajustamos el padding de la pantalla */
     border-radius: 10px;
     overflow: hidden;
     position: relative;
