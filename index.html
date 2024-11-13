@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="access-screen" id="access-screen">
-        <h2> Accede a Emtropy</h2>
+        <h2> Accede a Entropy</h2>
         <input type="password" id="access-code" class="access-input" placeholder="Clave de acceso">
         <button onclick="checkAccess()" class="access-button">Acceder</button>
     </div>
@@ -17,18 +17,19 @@
     <!-- Televisor retro (inicialmente oculto) -->
     <div class="tv-container" id="tv-container">
         <!-- Nombre del televisor -->
+        <div class="tv-antenna"></div>
         <div class="tv-name">JVC</div>
         
         <!-- Pantalla del TV -->
         <div class="tv-screen">
-            <iframe id="tv-video" src="https://www.youtube.com/embed/ROkOUS-7u2M" allowfullscreen></iframe>
+            <iframe id="video-frame" width="560" height="315" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
         <div class="tv-controls">
-            <div class="tv-button" onclick="changeVideo(1)">1</div>
-            <div class="tv-button" onclick="changeVideo(2)">2</div>
-            <div class="tv-button" onclick="changeVideo(3)">3</div>
-            <div class="tv-button" onclick="changeVideo(4)">4</div>
-            <div class="tv-button" onclick="changeVideo(5)">5</div>
+            <div class="tv-button" onclick="changeVideo(0)">1</div>
+            <div class="tv-button" onclick="changeVideo(1)">2</div>
+            <div class="tv-button" onclick="changeVideo(2)">3</div>
+            <div class="tv-button" onclick="changeVideo(3)">4</div>
+            <div class="tv-button" onclick="changeVideo(4)">5</div>
         </div>
         <div class="tv-container" id="tv-container">
             <!-- Contenedor del televisor -->
@@ -47,4 +48,4 @@
     </div>
     
     <script src="script.js"></script>
-<!-- Tu contenido aquí -->
+

@@ -147,7 +147,7 @@ body {
     display: flex;
     text-align: center;
     width: 700px;
-    background-color: #333;
+    background-color: #552727;
     padding: 80px;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
@@ -161,7 +161,7 @@ body {
     display: none;
     text-align: center;
     width: 700px;
-    background-color: #333;
+    background-color: #533434;
     padding: 55px;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
@@ -169,7 +169,60 @@ body {
     position: relative;
     margin-top: 30px;
 }
+/* Agregar patas al televisor */
+.tv-container::before,
+.tv-container::after {
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    width: 50px;
+    height: 10px;
+    background-color: #333;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
+}
 
+.tv-container::before {
+    left: 20%;
+}
+
+.tv-container::after {
+    right: 20%;
+}
+
+/* Antena bifurcada estilo TV antiguo */
+.tv-antenna {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    width: 5px;
+    height: 20px;
+    background-color: #333;
+    transform: translateX(-50%);
+}
+
+/* Barras inclinadas de la antena */
+.tv-antenna::before,
+.tv-antenna::after {
+    content: "";
+    position: absolute;
+    top: -20px; /* Ajustar según el tamaño deseado */
+    width: 3px;
+    height: 40px;
+    background-color: #333;
+    border-radius: 2px;
+    transform-origin: bottom;
+}
+
+.tv-antenna::before {
+    left: -10px;
+    transform: rotate(-45deg);
+}
+
+.tv-antenna::after {
+    right: -10px;
+    transform: rotate(45deg);
+}
 /* Nombre del televisor */
 .tv-name {
     position: absolute;
@@ -196,7 +249,7 @@ body {
 
 /* Pantalla del televisor */
 .tv-screen {
-    background-color: #222;
+    background-color: #914848;
     padding: 10px;
     border-radius: 10px;
     overflow: hidden;
@@ -243,58 +296,46 @@ body {
     background-color: #666;
     transform: scale(1.05);
 }
-
-/* MEDIA QUERIES */
-
-/* Pantallas pequeñas (móviles) */
-@media (max-width: 768px) {
+/* Media queries para pantallas pequeñas */
+@media (max-width: 1200px) {
     .tv-container {
-        width: 90%; /* El televisor ocupa el 90% del ancho de la pantalla */
-        padding: 10px; /* Reducimos el padding para pantallas pequeñas */
+        width: 80%; /* Ajustar el ancho del televisor */
+        max-width: 600px; /* Limitar el ancho máximo */
     }
-
     .tv-name {
-        font-size: 1.5rem; /* Reducimos el tamaño del nombre */
+        font-size: 1.5rem;
     }
-
     .tv-button {
-        font-size: 1rem; /* Reducimos el tamaño de los botones */
-        padding: 10px 20px;
-    }
-
-    .access-input {
-        width: 80%; /* Hacemos el campo de texto más pequeño */
-    }
-
-    .access-button {
-        width: 80%; /* Hacemos el botón más pequeño */
-        padding: 12px;
         font-size: 1.1rem;
-    }
-
-    .tv-screen iframe {
-        height: 300px; /* Reducimos el tamaño del video */
+        width: 40px;
     }
 }
 
-/* Pantallas muy pequeñas (teléfonos pequeños) */
-@media (max-width: 480px) {
+@media (max-width: 800px) {
     .tv-container {
-        width: 90%;
-        padding: 5px; /* Reducimos aún más el padding */
+        width: 90%; /* Ajustamos aún más el tamaño del TV */
+        max-width: 500px;
     }
-
     .tv-name {
-        font-size: 1.2rem; /* Ajuste para pantallas muy pequeñas */
+        font-size: 1.2rem;
     }
-
     .tv-button {
-        font-size: 0.9rem; /* Aún más pequeño para pantallas muy pequeñas */
-        padding: 8px 18px;
+        font-size: 1rem;
+        width: 30px;
     }
+}
 
-    .tv-screen iframe {
-        height: 250px; /* Reducimos aún más el tamaño del iframe */
+@media (max-width: 500px) {
+    .tv-container {
+        width: 95%; /* El televisor ocupa casi todo el ancho disponible */
+        max-width: 400px;
+    }
+    .tv-name {
+        font-size: 1rem;
+    }
+    .tv-button {
+        font-size: 0.9rem;
+        width: 25px;
     }
 }
 
