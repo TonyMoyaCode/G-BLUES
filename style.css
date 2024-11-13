@@ -82,21 +82,7 @@ div {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
     text-align: center;
 }
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #222; /* Fondo oscuro para un toque underground */
-    background-image: url(img/cafecito.jpg); /* URL de tu imagen */
-    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
-    background-position: center;
-    margin: 0;
-    color: #fff; /* Texto en blanco para contrastar con el fondo oscuro */
-}
-
-/* Estilos generales para el cuerpo */
+/* Estilo general para el cuerpo */
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -108,11 +94,36 @@ body {
     background-image: url('img/cafecito.jpg');
     background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
     background-position: center center;
-    background-attachment: fixed;
     color: #fff;
     overflow: hidden;
 }
 
+/* Botones de control */
+.tv-button {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 25px;
+    background-color: #444;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Botón de control */
+.tv-button:hover {
+    background-color: #555;
+    transform: scale(1.1);
+}
+
+.tv-button:active {
+    background-color: #666;
+    transform: scale(1.05);
+}
 /* Estilos generales para el contenedor */
 .container {
     z-index: 1;
@@ -157,37 +168,20 @@ body {
 }
 
 /* Estilo general para el contenedor del televisor */
+/* Estilo general para el contenedor del televisor */
 .tv-container {
-    display: none;
+    display: none; /* Ocultamos el contenedor inicialmente */
     text-align: center;
-    width: 700px;
+    width: 80vw;  /* El televisor ocupa el 80% del ancho de la pantalla */
+    max-width: 700px; /* Limita el tamaño máximo del televisor */
     background-color: #533434;
-    padding: 55px;
+    padding: 5vw;  /* Ajustamos el padding según el tamaño de la pantalla */
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
     border: 12px solid #555;
     position: relative;
     margin-top: 30px;
-}
-/* Agregar patas al televisor */
-.tv-container::before,
-.tv-container::after {
-    content: "";
-    position: absolute;
-    bottom: -30px;
-    width: 50px;
-    height: 10px;
-    background-color: #333;
-    border-radius: 5px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
-}
-
-.tv-container::before {
-    left: 20%;
-}
-
-.tv-container::after {
-    right: 20%;
+    transition: all 0.3s ease-in-out;
 }
 
 /* Antena bifurcada estilo TV antiguo */
@@ -201,12 +195,12 @@ body {
     transform: translateX(-50%);
 }
 
-/* Barras inclinadas de la antena */
+
 .tv-antenna::before,
 .tv-antenna::after {
     content: "";
     position: absolute;
-    top: -20px; /* Ajustar según el tamaño deseado */
+    top: -20px;
     width: 3px;
     height: 40px;
     background-color: #333;
@@ -223,6 +217,7 @@ body {
     right: -10px;
     transform: rotate(45deg);
 }
+
 /* Nombre del televisor */
 .tv-name {
     position: absolute;
@@ -237,20 +232,10 @@ body {
     letter-spacing: 3px;
 }
 
-.tv-container::before {
-    left: 30%;
-    transform: rotate(-25deg);
-}
-
-.tv-container::after {
-    right: 30%;
-    transform: rotate(25deg);
-}
-
 /* Pantalla del televisor */
 .tv-screen {
     background-color: #914848;
-    padding: 10px;
+    padding: 5vw;  /* Ajustamos el padding de la pantalla */
     border-radius: 10px;
     overflow: hidden;
     position: relative;
@@ -260,7 +245,7 @@ body {
 /* Iframe para video en el televisor */
 .tv-screen iframe {
     width: 100%;
-    height: 400px;
+    height: 100%;  /* Hacemos que el video ocupe toda la pantalla del televisor */
     border: none;
     border-radius: 5px;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
@@ -296,46 +281,36 @@ body {
     background-color: #666;
     transform: scale(1.05);
 }
-/* Media queries para pantallas pequeñas */
-@media (max-width: 1200px) {
-    .tv-container {
-        width: 80%; /* Ajustar el ancho del televisor */
-        max-width: 600px; /* Limitar el ancho máximo */
-    }
-    .tv-name {
-        font-size: 1.5rem;
-    }
-    .tv-button {
-        font-size: 1.1rem;
-        width: 40px;
-    }
-}
-
+/* Ajustes para pantallas más pequeñas (como teléfonos) */
 @media (max-width: 800px) {
     .tv-container {
-        width: 90%; /* Ajustamos aún más el tamaño del TV */
-        max-width: 500px;
+        width: 90vw; /* El televisor ocupa el 90% del ancho de la pantalla */
+        max-width: 500px; /* Limita el tamaño máximo del televisor */
+        padding: 6vw;  /* Aumentamos el padding para dispositivos móviles */
     }
+
     .tv-name {
-        font-size: 1.2rem;
+        font-size: 1.5rem; /* Reducimos el tamaño del nombre del televisor */
     }
-    .tv-button {
-        font-size: 1rem;
-        width: 30px;
+
+    .tv-screen {
+        padding: 4vw;  /* Ajustamos el padding para pantallas más pequeñas */
     }
 }
 
+/* Ajustes para pantallas aún más pequeñas */
 @media (max-width: 500px) {
     .tv-container {
-        width: 95%; /* El televisor ocupa casi todo el ancho disponible */
+        width: 95vw; /* El televisor ocupa casi todo el ancho disponible */
         max-width: 400px;
+        padding: 8vw; /* Ajustamos el padding para que se vea bien en pantallas muy pequeñas */
     }
+
     .tv-name {
-        font-size: 1rem;
+        font-size: 1.2rem; /* Reducimos aún más el tamaño del nombre */
     }
-    .tv-button {
-        font-size: 0.9rem;
-        width: 25px;
+
+    .tv-screen {
+        padding: 6vw; /* Ajustamos el padding en la pantalla */
     }
 }
-
