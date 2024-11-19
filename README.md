@@ -17,6 +17,7 @@ El acceso a ciertas secciones del sitio está protegido con una clave, que es la
 - JavaScript
 - [Vue.js 3](https://vuejs.org/)
 - [Node.js](https://nodejs.org/)
+- 
 
 ## Instrucciones de instalación
 
@@ -24,3 +25,6 @@ El acceso a ciertas secciones del sitio está protegido con una clave, que es la
 
    ```bash
    git clone https://github.com/tu-usuario/tu-repositorio.git
+
+  ## Agradecimientos
+Este proyecto está dedicado a mi hermano G-Blues y su trabajo. ¡Gracias por la inspiración!
