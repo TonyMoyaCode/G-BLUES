@@ -1,31 +1,21 @@
-/* General */
-body, h2, .access-input, .access-button, div {
+body {
+    background-color: #222;
+    background-image: url('img/cafecito.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
     font-family: 'Press Start 2P', cursive;
     font-size: 1.5rem;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    margin: 0;
-    padding: 12px;
-}
-
-body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #222;
-    background-image: url('img/cafecito.jpg');
-    background-size: cover;
-    background-position: center;
     overflow: hidden;
 }
-
-/* Pantalla de acceso (estilo televisor gamer) */
+/* Caja de acceso */
 .access-screen {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro con opacidad */
     padding: 25px;
     border-radius: 15px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
@@ -39,9 +29,20 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     border: 8px solid #111;
+    opacity: 0.9; /* Controla la opacidad */
 }
 
-/* Ajuste de los campos de entrada con estilo retro */
+/* Título de la caja de acceso */
+.access-screen h2 {
+    font-size: 2rem;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8); /* Estilo gamer para las letras */
+    margin-bottom: 20px;
+}
+
+/* Campo de entrada */
 .access-input {
     padding: 12px;
     font-size: 1rem;
@@ -52,13 +53,19 @@ body {
     color: #fff;
     margin-top: 15px;
     text-align: center;
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.7); /* Sombra verde para estilo gamer */
+    transition: box-shadow 0.3s ease;
 }
 
-/* Botón de acceso estilo retro */
+.access-input:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 1); /* Sombra verde al enfocar el input */
+}
+
+/* Botón de acceso verde */
 .access-button {
     padding: 12px 25px;
-    background-color: #337aff;
+    background-color: #28a745; /* Verde clásico */
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -68,44 +75,72 @@ body {
     text-transform: uppercase;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
     margin-top: 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .access-button:hover {
-    background-color: #47ffa3;
+    background-color: #218838; /* Verde más oscuro al pasar el mouse */
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.8);
-    transform: translateY(-3px);
+    transform: translateY(-3px); /* Efecto de elevación al pasar el mouse */
 }
 
-/* Estilo del televisor */
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .access-screen {
+        width: 90%;  /* Reducir el tamaño para mejorar el diseño en dispositivos más pequeños */
+        padding: 20px;
+    }
+
+    .access-screen h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .access-screen {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .access-screen h2 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Televisor */
 .tv-container {
-    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
-    max-width: 800px; /* Aumentar tamaño máximo del televisor */
-    background: #2e2e2e;
-    padding: 30px; /* Aumentar espacio interno */
+    max-width: 800px;
+    padding: 30px;
     border-radius: 30px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
-    border: 15px solid #111;
+    background: linear-gradient(to bottom, #5d4037, #3e2723);
     margin: 0 auto;
     text-align: center;
-    background-image: linear-gradient(to bottom, #5d4037, #3e2723); /* Color retro */
 }
 
-/* Pantalla del televisor */
+.tv-name {
+    font-size: 2.5rem;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 2px 5px rgba(255, 255, 255, 0.8), 0 0 15px rgba(255, 255, 255, 0.5);
+    margin-bottom: 20px;
+}
+
 .tv-screen {
     position: relative;
     width: 100%;
-    max-width: 670px; /* Asegurar que la pantalla del TV no sea demasiado grande */
+    max-width: 670px;
     aspect-ratio: 16 / 9;
     background-color: #333;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.9); /* Sombra retro */
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.9);
     margin-bottom: 20px;
     border: 8px solid #111;
 }
@@ -116,135 +151,140 @@ body {
     border: none;
 }
 
-/* Nombre del televisor */
-.tv-name {
-    font-size: 2.5rem; /* Aumentar el tamaño del nombre */
-    font-family: 'Courier New', monospace;
-    font-weight: bold;
-    color: #fff;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8), 0 0 15px rgba(255, 255, 255, 0.5);
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-/* Patas del televisor */
-.tv-legs {
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-    position: absolute;
-    bottom: -50px; /* Más espacio para las patas */
-    z-index: 1;
-}
-
-.tv-leg {
-    width: 60px;
-    height: 120px; /* Mayor altura para un aspecto más robusto */
-    background: #444;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
-}
-
-/* Botones del televisor */
 .tv-controls {
     display: flex;
-    flex-direction: column; /* Alinea los botones de arriba hacia abajo */
-    position: absolute;
-    right: 15px; /* Coloca los botones a la derecha de la pantalla */
-    top: 55%;
-    transform: translateY(-50%); /* Centra los botones verticalmente */
-    z-index: 2;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
 }
-
 .tv-button {
-    background: #444;
+    background: #ffffff;
     border: none;
-    padding: 15px 25px; /* Tamaño más grande para los botones */
-    margin: 15px 0; /* Espaciado entre los botones */
-    color: #fff;
+    padding: 15px 25px;
+    margin: 15px 0;
+    color: #ffffff !important;   /* Cambiar el color de los números de los botones a amarillo */
     border-radius: 5px;
-    font-size: 1.2rem; /* Aumentar tamaño de la fuente */
+    font-size: 1.2rem;
     font-weight: bold;
     text-transform: uppercase;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 5px 10px rgb(255, 255, 255);
     cursor: pointer;
     transition: all 0.3s ease;
 }
-
 .tv-button:hover {
     background: #666;
     transform: scale(1.1);
 }
 
 .tv-button:active {
-    background: #888;
-    transform: scale(0.9);
+    background: #444 !important;
+    transform: scale(1) !important;
 }
 
-/* Media Queries para Responsividad */
+.tv-button:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Añade un efecto de brillo suave */
+}
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #222;
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        .door-container {
+            position: relative;
+            width: 200px;
+            height: 400px;
+            background: linear-gradient(to bottom, #5d4037, #3e2723);
+            border: 5px solid #111;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+            cursor: pointer;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .door-container:hover {
+            transform: scale(1.05);
+        }
+
+        .door-left, .door-right {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 50%;
+            background: linear-gradient(to bottom, #8d6e63, #5d4037);
+            transition: all 1s ease-in-out;
+        }
+
+        .door-left {
+            left: 0;
+            border-right: 2px solid #000;
+        }
+
+        .door-right {
+            right: 0;
+            border-left: 2px solid #000;
+        }
+
+        .door-container.opened .door-left {
+            transform: translateX(-100%);
+        }
+
+        .door-container.opened .door-right {
+            transform: translateX(100%);
+        }
+
+        .door-label {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            font-size: 1.5rem;
+            text-align: center;
+            z-index: 2;
+        }
+/* Media Queries */
 @media (max-width: 768px) {
     .tv-container {
-        width: 85%;  /* Reducir ligeramente el tamaño para mejorar el diseño */
+        width: 90%;
         padding: 20px;
     }
 
     .tv-name {
-        font-size: 1.8rem;  /* Ajuste para que el texto no se vea demasiado grande */
-    }
-
-    .tv-screen {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 16 / 9;
+        font-size: 2rem;
     }
 
     .tv-controls {
-        top: 50%;
-        transform: translateY(-50%);
-        right: 10px;  /* Ajustamos para que no se sobrepongan con los bordes */
+        gap: 10px;
     }
 
     .tv-button {
-        font-size: 1.2rem;  /* Reducir tamaño de los botones */
-        padding: 10px 18px;  /* Hacer botones un poco más pequeños */
+        font-size: 1rem;
+        padding: 10px 18px;
     }
 }
 
 @media (max-width: 480px) {
     .tv-container {
-        width: 95%;  /* Ajustar aún más para pantallas pequeñas */
+        width: 95%;
         padding: 10px;
     }
 
     .tv-name {
-        font-size: 1.4rem;  /* Reducir el tamaño del nombre aún más */
-    }
-
-    .tv-screen {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 16 / 9;
-    }
-
-    .tv-legs {
-        flex-direction: column;
-        justify-content: center;
-        margin-top: 15px;
-    }
-
-    .tv-leg {
-        width: 35px;  /* Hacer las patas aún más pequeñas */
-        height: 55px; /* Más compactas */
-    }
-
-    .tv-controls {
-        top: 50%;
-        transform: translateY(-50%);
-        right: 5px;  /* Más cercano al borde para pantallas muy pequeñas */
+        font-size: 1.5rem;
     }
 
     .tv-button {
-        font-size: 1rem;  /* Reducir el tamaño de los botones */
-        padding: 8px 15px;  /* Botones más pequeños */
+        font-size: 0.9rem;
+        padding: 8px 15px;
     }
 }
