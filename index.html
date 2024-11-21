@@ -21,10 +21,10 @@ body {
     font-family: 'Arial', sans-serif;
 }
 
-        .door-container {
+.door-container {
     position: absolute;
     bottom: 20px;
-    right: 300px; /* Ajuste a la derecha */
+    right: 20px;  /* Mantén la puerta cerca de la esquina derecha */
     width: 150px;
     height: 250px;
     background: linear-gradient(to bottom, #5d4037, #3e2723);
@@ -81,20 +81,24 @@ body {
     font-weight: bold;
 }
 
+.door-container {
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
 @media (max-width: 768px) {
     .door-container {
-        width: 50px; /* Tamaño más visible */
-        height: 20px; /* Tamaño más visible */
-        position: relative; /* Asegura que el posicionamiento tenga efecto */
-        bottom: 5px;  /* Ajuste al borde inferior */
-        left: 5%;     /* Mueve la puerta a la izquierda */
-        right: auto;  /* Elimina el right para usar left */
+        width: 25vw;  /* 40% del ancho de la pantalla */
+        height: 20vh; /* 40% de la altura de la pantalla */
+        position: absolute; /* Asegura que esté en una posición absoluta */
+        bottom: 45px; /* Mantén la puerta pegada al borde inferior */
+        right: 20px;  /* Mantén la puerta pegada al borde derecho */
     }
 
     .door-label {
-        font-size: 1rem; /* Ajuste del texto */
+        font-size: 1.5rem; /* Ajuste del texto */
     }
 }
+
 
     </style>
 </head>
