@@ -24,9 +24,9 @@ body {
         .door-container {
     position: absolute;
     bottom: 20px;
-    right: 80px; /* Ajuste a la derecha */
+    right: 300px; /* Ajuste a la derecha */
     width: 150px;
-    height: 250px;
+    height: 200px;
     background: linear-gradient(to bottom, #5d4037, #3e2723);
     border: 6px solid #d8c2b8;
     border-radius: 15px;
@@ -83,8 +83,9 @@ body {
 
 @media (max-width: 768px) {
     .door-container {
-        width: 20px;  /* Tamaño reducido */
-        height: 5px; /* Tamaño reducido */
+        width: 50px; /* Tamaño más visible */
+        height: 20px; /* Tamaño más visible */
+        position: relative; /* Asegura que el posicionamiento tenga efecto */
         bottom: 5px;  /* Ajuste al borde inferior */
         left: 5%;     /* Mueve la puerta a la izquierda */
         right: auto;  /* Elimina el right para usar left */
