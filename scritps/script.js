@@ -44,3 +44,8 @@ const videos = [
     "https://www.youtube.com/embed/Hv2Nej6UnCU",  // Video 4
     "https://www.youtube.com/embed/T-JgsLGvWDk"   // Video 5
 ];
+// Función para ocultar el mensaje y mostrar el video después de unos segundos
+setTimeout(function() {
+    document.getElementById("welcomeMessage").style.display = "none"; // Ocultar mensaje
+    document.getElementById("video").style.display = "block"; // Mostrar video
+}, 5000); // Esperar 5 segundos (ajustable)

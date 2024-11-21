@@ -13,101 +13,8 @@ body {
     margin: 0;
     overflow: hidden;
 }
-/* Caja de acceso */
-.access-screen {
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro con opacidad */
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 320px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: 8px solid #111;
-    opacity: 0.9; /* Controla la opacidad */
-}
 
-/* Título de la caja de acceso */
-.access-screen h2 {
-    font-size: 2rem;
-    font-family: 'Courier New', monospace;
-    font-weight: bold;
-    color: #fff;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8); /* Estilo gamer para las letras */
-    margin-bottom: 20px;
-}
-
-/* Campo de entrada */
-.access-input {
-    padding: 12px;
-    font-size: 1rem;
-    width: 80%;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    background-color: #222;
-    color: #fff;
-    margin-top: 15px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.7); /* Sombra verde para estilo gamer */
-    transition: box-shadow 0.3s ease;
-}
-
-.access-input:focus {
-    outline: none;
-    box-shadow: 0 0 10px rgba(0, 255, 0, 1); /* Sombra verde al enfocar el input */
-}
-
-/* Botón de acceso verde */
-.access-button {
-    padding: 12px 25px;
-    background-color: #28a745; /* Verde clásico */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: bold;
-    color: white;
-    text-transform: uppercase;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
-    margin-top: 15px;
-    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.access-button:hover {
-    background-color: #218838; /* Verde más oscuro al pasar el mouse */
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.8);
-    transform: translateY(-3px); /* Efecto de elevación al pasar el mouse */
-}
-
-/* Media Queries para Responsividad */
-@media (max-width: 768px) {
-    .access-screen {
-        width: 90%;  /* Reducir el tamaño para mejorar el diseño en dispositivos más pequeños */
-        padding: 20px;
-    }
-
-    .access-screen h2 {
-        font-size: 1.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .access-screen {
-        width: 95%;
-        padding: 10px;
-    }
-
-    .access-screen h2 {
-        font-size: 1.2rem;
-    }
-}
-
-/* Televisor */
+/* Televisor retro */
 .tv-container {
     display: flex;
     flex-direction: column;
@@ -116,41 +23,99 @@ body {
     width: 100%;
     max-width: 800px;
     padding: 30px;
-    border-radius: 30px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
-    background: linear-gradient(to bottom, #5d4037, #3e2723);
+    border-radius: 20px; /* Bordes más suaves */
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.8); /* Sombra más fuerte para dar profundidad */
+    background: linear-gradient(to bottom, #3e2723, #5d4037); /* Color de fondo más oscuro */
     margin: 0 auto;
     text-align: center;
+    border: 10px solid #1e1e1e; /* Borde grueso estilo retro */
+    position: relative; /* Necesario para posicionar la antena y las patas */
 }
 
+/* Nombre del televisor */
 .tv-name {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-family: 'Courier New', monospace;
     font-weight: bold;
     color: #fff;
     text-shadow: 0 2px 5px rgba(255, 255, 255, 0.8), 0 0 15px rgba(255, 255, 255, 0.5);
     margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
+/* Pantalla del televisor */
 .tv-screen {
     position: relative;
     width: 100%;
-    max-width: 670px;
+    max-width: 700px;
     aspect-ratio: 16 / 9;
-    background-color: #333;
+    background-color: #222;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.9);
     margin-bottom: 20px;
-    border: 8px solid #111;
+    border: 10px solid #333;
 }
 
-.tv-screen iframe {
+/* Antena retro */
+.tv-antenna {
+    position: absolute;
+    top: -40px; /* Ajusta la posición para colocarla encima */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 80px;
+    background-color: #ccc;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.tv-antenna:before, .tv-antenna:after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: #ccc;
+    border-radius: 50%;
+}
+
+.tv-antenna:before {
+    top: -8px;
+    left: -8px;
+}
+
+.tv-antenna:after {
+    top: -8px;
+    right: -8px;
+}
+
+/* Patas del televisor */
+.tv-legs {
+    display: flex;
+    justify-content: space-between;
     width: 100%;
-    height: 100%;
-    border: none;
+    position: absolute;
+    bottom: -40px; /* Ajusta para que las patas estén justo abajo */
+    padding: 0 50px;
 }
 
+.tv-leg {
+    width: 20px;
+    height: 40px;
+    background-color: #333;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.tv-leg-left {
+    transform: rotate(-15deg);
+}
+
+.tv-leg-right {
+    transform: rotate(15deg);
+}
+
+/* Controles retro */
 .tv-controls {
     display: flex;
     justify-content: center;
@@ -158,101 +123,38 @@ body {
     gap: 15px;
     margin-top: 15px;
 }
+
 .tv-button {
-    background: #ffffff;
-    border: none;
-    padding: 15px 25px;
-    margin: 15px 0;
-    color: #ffffff !important;   /* Cambiar el color de los números de los botones a amarillo */
+    background: #222;
+    border: 2px solid #fff;
+    padding: 12px 20px;
+    margin: 10px 0;
+    color: #fff;
     border-radius: 5px;
     font-size: 1.2rem;
     font-weight: bold;
     text-transform: uppercase;
-    box-shadow: 0 5px 10px rgb(255, 255, 255);
+    box-shadow: 0 5px 10px rgba(255, 255, 255, 0.6);
     cursor: pointer;
     transition: all 0.3s ease;
 }
+
 .tv-button:hover {
-    background: #666;
-    transform: scale(1.1);
+    background: #444;
+    transform: scale(1.05);
 }
 
 .tv-button:active {
-    background: #444 !important;
-    transform: scale(1) !important;
+    background: #666;
+    transform: scale(1);
 }
 
 .tv-button:focus {
     outline: none;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Añade un efecto de brillo suave */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Resalta el botón al enfocar */
 }
 
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #222;
-            font-family: 'Press Start 2P', cursive;
-        }
-
-        .door-container {
-            position: relative;
-            width: 200px;
-            height: 400px;
-            background: linear-gradient(to bottom, #5d4037, #3e2723);
-            border: 5px solid #111;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-            cursor: pointer;
-            overflow: hidden;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .door-container:hover {
-            transform: scale(1.05);
-        }
-
-        .door-left, .door-right {
-            position: absolute;
-            top: 0;
-            height: 100%;
-            width: 50%;
-            background: linear-gradient(to bottom, #8d6e63, #5d4037);
-            transition: all 1s ease-in-out;
-        }
-
-        .door-left {
-            left: 0;
-            border-right: 2px solid #000;
-        }
-
-        .door-right {
-            right: 0;
-            border-left: 2px solid #000;
-        }
-
-        .door-container.opened .door-left {
-            transform: translateX(-100%);
-        }
-
-        .door-container.opened .door-right {
-            transform: translateX(100%);
-        }
-
-        .door-label {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-            font-size: 1.5rem;
-            text-align: center;
-            z-index: 2;
-        }
-/* Media Queries */
+/* Efectos retro para la interfaz */
 @media (max-width: 768px) {
     .tv-container {
         width: 90%;

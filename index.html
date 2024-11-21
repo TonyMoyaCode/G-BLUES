@@ -12,100 +12,101 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background: url('https://images.unsplash.com/photo-1511497581691-f1d7b74c8ee5') no-repeat center center fixed;
+            background: url('/img/cafe.png') no-repeat center center fixed;
             background-size: cover;
             background-color: #f4e0c1;
             font-family: 'Arial', sans-serif;
         }
 
         .door-container {
-            position: relative;
-            width: 220px;
-            height: 440px;
-            background: linear-gradient(to top, #4e2c2a, #9e5f5b);
-            border: 6px solid #d8c2b8;
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-            cursor: pointer;
-            overflow: hidden;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s;
-        }
+    position: absolute;
+    bottom: 20px;
+    right: 80px; /* Ajuste a la derecha */
+    width: 150px;
+    height: 250px;
+    background: linear-gradient(to bottom, #5d4037, #3e2723);
+    border: 6px solid #d8c2b8;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+}
 
-        .door-container:hover {
-            transform: scale(1.05);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
-        }
+.door-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+}
 
-        .door-left, .door-right {
-            position: absolute;
-            top: 0;
-            height: 100%;
-            width: 50%;
-            background: linear-gradient(to top, #a06f63, #5e3d34);
-            border: 2px solid #3e2d2b;
-            transition: transform 1s ease-in-out;
-        }
+.door-left, .door-right {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    background: linear-gradient(to top, #a06f63, #5e3d34);
+    transition: transform 1s ease-in-out;
+}
 
-        .door-left {
-            left: 0;
-            border-right: 2px solid #3e2d2b;
-        }
+.door-left {
+    left: 0;
+    border-right: 2px solid #3e2d2b;
+}
 
-        .door-right {
-            right: 0;
-            border-left: 2px solid #3e2d2b;
-        }
+.door-right {
+    right: 0;
+    border-left: 2px solid #3e2d2b;
+}
 
-        .door-container.opened .door-left {
-            transform: translateX(-100%);
-        }
+.door-container.opened .door-left {
+    transform: translateX(-100%);
+}
 
-        .door-container.opened .door-right {
-            transform: translateX(100%);
-        }
+.door-container.opened .door-right {
+    transform: translateX(100%);
+}
 
-        .door-label {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
-            font-size: 2rem;
-            text-align: center;
-            z-index: 2;
-            font-weight: bold;
-        }
+.door-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    font-size: 2rem;
+    text-align: center;
+    z-index: 2;
+    font-weight: bold;
+}
 
-        /* Agregado para mejorar la experiencia en móviles */
-        @media (max-width: 768px) {
-            .door-container {
-                width: 160px;
-                height: 320px;
-            }
+@media (max-width: 768px) {
+    .door-container {
+        width: 20px;  /* Tamaño reducido */
+        height: 5px; /* Tamaño reducido */
+        bottom: 5px;  /* Ajuste al borde inferior */
+        left: 5%;     /* Mueve la puerta a la izquierda */
+        right: auto;  /* Elimina el right para usar left */
+    }
 
-            .door-label {
-                font-size: 1.2rem;
-            }
-        }
+    .door-label {
+        font-size: 1rem; /* Ajuste del texto */
+    }
+}
+
     </style>
 </head>
 <body>
     <div class="door-container" id="door">
         <div class="door-left"></div>
         <div class="door-right"></div>
-        <div class="door-label">ENTRAR</div>
+        <div class="door-label">Entra</div>
     </div>
 
     <script>
-        // Evento para abrir la puerta y redirigir
         document.getElementById("door").addEventListener("click", function () {
             const door = document.getElementById("door");
             door.classList.add("opened");
-
-            // Redirigir a la página del televisor
             setTimeout(() => {
-                window.location.href = "tv.html"; // Cambia por la ruta del televisor
+                window.location.href = "tv.html"; // Cambia la ruta según tu proyecto
             }, 1000);
         });
     </script>

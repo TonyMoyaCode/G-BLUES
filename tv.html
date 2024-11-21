@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Televisor Retro con Múltiples Videos</title>
+    <title>Bienvenidos a Entropy</title>
     <title>Puerta de Acceso</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -12,9 +12,27 @@
 </head>
 
 <body>
-  
+    <style>
+    .welcome-message {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        font-size: 2rem;
+        padding: 20px;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+    }
+</style>
     <div id="tv-container" class="tv-container container-fluid d-flex justify-content-center align-items-center" style="display: none;">
         <div class="tv-name text-center">
+            <div class="welcome-message" id="welcomeMessage">
+                Bienvenidos a Entropy. ¡Disfruten de esta obra musical!
+            </div>
             <h3>JVC</h3>
         </div>
         
